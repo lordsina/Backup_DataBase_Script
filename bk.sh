@@ -7,7 +7,7 @@ function delete_old_backup(){
 	cd $DIR$DAY_STATUS
 	pwd
 	find $DIR$DAY_STATUS -mindepth 1 -mtime +5 -delete
-	mysqldump -u DBUSERNMAE -pPASSWORDDB DBNAME  > $DIR$DAY_STATUS/DB_BK_`date +%Y%m%d%H%M`_.sql
+	mysqldump -u root -p****** *******  > $DIR$DAY_STATUS/DB_BK_`date +%Y%m%d%H%M`_.sql
 }
 
 

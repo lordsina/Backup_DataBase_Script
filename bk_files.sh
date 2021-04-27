@@ -10,14 +10,15 @@ function delete_old_backup(){
 	cd $DIR$DAY_STATUS
 	pwd
 	find $DIR$DAY_STATUS -mindepth 1 -mtime +5 -delete
-	mysqldump -u root -p4TNm2cpqxrAg c1mallgrocery  > $DIR$DAY_STATUS/DB_BK_`date +%Y%m%d%H%M`_.sql
+	mysqldump -u root -p******* *******  > $DIR$DAY_STATUS/DB_BK_`date +%Y%m%d%H%M`_.sql
 }
 
 function backup_f(){
-	cp -R -u -p $SOURCE $DESTINATION$FILE_NAME1
+	rsync -rv --delete --ignore-existing  $SOURCE  $DESTINATION$FILE_NAME1
+	
 }
 function backup_z(){
-	cp -R -u -p $SOURCE $DESTINATION$FILE_NAME2
+	rsync -rv --delete --ignore-existing  $SOURCE  $DESTINATION$FILE_NAME2
 }
 
 
